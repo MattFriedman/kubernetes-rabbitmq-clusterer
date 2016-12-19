@@ -95,6 +95,9 @@ The exposed port for the management console in this example is: `32012`.
     curl -s http://guest:guest@192.168.99.100:32012/api/overview|jq .node
 
 
+## Management console example
+
+![](rabbitmq.png)
 
 
 
