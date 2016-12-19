@@ -1,6 +1,8 @@
 # RabbitMQ Cluster in Kubernetes
+(Using the rabbitmq-clusterer plugin)
 
-Using the rabbitmq-clusterer plugin.
+This is an example of how one might implement a rabbitmq cluster in Kubernetes using the clusterer plugin. 
+Advice, input and pull requests on how to improve this would be greatly appreciated.
 
 References:
 
@@ -55,7 +57,7 @@ If successful you'll see the following at the end of the log stream:
      =INFO REPORT==== 19-Dec-2016::02:36:19 ===
      rabbit on node rabbit@rabbit3 up
      
-## Start the rabbitmq load round-robin service
+## Start the rabbitmq round-robin service
      
      kubectl create -f kube/rabbitmq-clustered-svc.yaml
      
@@ -83,7 +85,8 @@ Describe the rabbitmq service:
 ## Load the rabbitmq management console in your browser
 
 The exposed port for the management console in this example is: `32012`. 
-   
+See      `NodePort:		mgmt	32012/TCP` above
+
    `http://<docker-host>:32012`
    
 ## View cluster overview
