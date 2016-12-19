@@ -1,0 +1,44 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rabbit1
+  labels:
+    name: "RabbitMQ1"
+spec:
+  selector:
+    app: rabbit1
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      name: epmd
+      port: 4369
+    - protocol: TCP
+      name: epmd-range
+      port: 44001
+    - protocol: TCP
+      name: amqp
+      port: 5671
+    - protocol: TCP
+      name: amqp-tls
+      port: 5672
+    - protocol: TCP
+      name: erlang
+      port: 25672
+    - protocol: TCP
+      name: mgmt
+      port: 15672
+    - protocol: TCP
+      name: stomp1
+      port: 61613
+    - protocol: TCP
+      name: stomp2
+      port: 61614
+    - protocol: TCP
+      name: mqtt1
+      port: 1883
+    - protocol: TCP
+      name: mqtt2
+      port: 8883
+
+
+

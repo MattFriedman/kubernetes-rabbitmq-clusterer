@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: rabbitmq-svc
+  name: rabbitmq-svc
+spec:
+  type : NodePort
+  selector:
+      type: rabbitmq
+  ports:
+    - protocol: TCP
+      name: amqp
+      port: 5671
+    - protocol: TCP
+      name: amqp-tls
+      port: 5672
+    - protocol: TCP
+      name: mgmt
+      port: 15672

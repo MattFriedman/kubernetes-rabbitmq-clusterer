@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: rabbit2
+spec:
+  replicas: 1
+  selector:
+    type: rabbitmq
+    app: rabbit2
+  template:
+    metadata:
+      name: rabbit2
+      labels:
+        app: rabbit2
+        type: rabbitmq
+    spec:
+      hostname: rabbit2 # hostname is _absolutely_ needed for erlang to know that the local node should be in the cluster!
+      containers:
+        - name: rabbit2
+          image: localhost:5000/com/example/rabbitmq_clusterer
+          env:
+            - name: "RABBITMQ_ERLANG_COOKIE"
+              value: "super-secret"
+
