@@ -85,7 +85,7 @@ Describe the rabbitmq service:
 ## Load the rabbitmq management console in your browser
 
 The exposed port for the management console in this example is: `32012`. 
-See      `NodePort:		mgmt	32012/TCP` above
+See `NodePort: mgmt 32012/TCP` above
 
    `http://<docker-host>:32012`
    
