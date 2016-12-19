@@ -1,2 +1,2 @@
-rootProject.name = 'rabbitmq-clusterer'
+rootProject.name = 'kubernetes-rabbitmq-clusterer'
 
