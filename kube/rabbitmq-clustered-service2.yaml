@@ -16,10 +16,10 @@ spec:
       name: epmd-range
       port: 44001
     - protocol: TCP
-      name: amqp
+      name: amqp-tls
       port: 5671
     - protocol: TCP
-      name: amqp-tls
+      name: amqp
       port: 5672
     - protocol: TCP
       name: erlang

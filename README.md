@@ -59,7 +59,7 @@ If successful you'll see the following at the end of the log stream:
      
 ## Start the rabbitmq round-robin service
      
-     kubectl create -f kube/rabbitmq-clustered-svc.yaml
+         kubectl create -f kube/rabbitmq-clustered-svc.yaml
      
 Describe the rabbitmq service:
      
@@ -69,33 +69,33 @@ Describe the rabbitmq service:
      Labels:			name=rabbitmq-svc
      Selector:		type=rabbitmq
      Type:			NodePort
-     IP:			10.0.0.104
-     Port:			amqp	5671/TCP
-     NodePort:		amqp	31955/TCP
+     IP:			10.0.0.172
+     Port:			amqp-tls	5671/TCP
+     NodePort:		amqp-tls	30399/TCP
      Endpoints:		172.17.0.5:5671,172.17.0.6:5671,172.17.0.7:5671
-     Port:			amqp-tls	5672/TCP
-     NodePort:		amqp-tls	30963/TCP
+     Port:			amqp	5672/TCP
+     NodePort:		amqp	31200/TCP
      Endpoints:		172.17.0.5:5672,172.17.0.6:5672,172.17.0.7:5672
      Port:			mgmt	15672/TCP
-     NodePort:		mgmt	32012/TCP
+     NodePort:		mgmt	30849/TCP
      Endpoints:		172.17.0.5:15672,172.17.0.6:15672,172.17.0.7:15672
      Session Affinity:	None
      No events.
    
 ## Load the rabbitmq management console in your browser
 
-The exposed port for the management console in this example is: `32012`. 
-See `NodePort: mgmt 32012/TCP` above
+The exposed port for the management console in this example is: `30849`. 
+See `NodePort: mgmt 30849/TCP` above
 
-   `http://<docker-host>:32012`
+   `http://<docker-host>:30849`
    
 ## View cluster overview
 
     # Full overview
-    curl -s http://guest:guest@192.168.99.100:32012/api/overview|jq .
+    curl -s http://guest:guest@192.168.99.100:30849/api/overview|jq .
     
     # See which node you are connecting to
-    curl -s http://guest:guest@192.168.99.100:32012/api/overview|jq .node
+    curl -s http://guest:guest@192.168.99.100:30849/api/overview|jq .node
 
 
 ## Management console example
