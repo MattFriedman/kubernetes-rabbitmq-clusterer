@@ -92,10 +92,10 @@ See `NodePort: mgmt 30849/TCP` above
 ## View cluster overview
 
     # Full overview
-    curl -s http://guest:guest@192.168.99.100:30849/api/overview|jq .
+    curl -s http://guest:guest@<docker-host>:30849/api/overview|jq .
     
     # See which node you are connecting to
-    curl -s http://guest:guest@192.168.99.100:30849/api/overview|jq .node
+    curl -s http://guest:guest@<docker-host>:30849/api/overview|jq .node
 
 
 ## Management console example
